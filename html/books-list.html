@@ -1,0 +1,1196 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book List</title>
+		<!-- Link to the books-list CSS file -->
+		<link rel="stylesheet" href="../css/books-list.css" />
+		<!--<style>
+			:root {
+				--default-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+					'Segoe UI Emoji', 'Segoe UI Symbol', 'Microsoft YaHei Light', sans-serif;
+				--font-monospace: 'Source Code Pro', monospace;
+				--background-primary: #ffffff;
+				--background-modifier-border: #ddd;
+				--text-accent: #705dcf;
+				--text-accent-hover: #7a6ae6;
+				--text-normal: #2e3338;
+				--background-secondary: #f2f3f5;
+				--background-secondary-alt: #fcfcfc;
+				--text-muted: #888888;
+				--font-mermaid: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Apple Color Emoji', 'Segoe UI Emoji',
+					'Segoe UI Symbol', 'Microsoft YaHei Light', sans-serif;
+				--text-error: #e4374b;
+				--background-primary-alt: '#fafafa';
+				--background-accent: '';
+				--interactive-accent: hsl(254, 80%, calc(68% + 2.5%));
+				--background-modifier-error: #e4374b;
+				--background-primary-alt: #fafafa;
+				--background-modifier-border: #e0e0e0;
+			}
+
+			body,
+			input {
+				font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+
+			code,
+			kbd,
+			pre {
+				font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+				background-color: #f5f5f5;
+			}
+
+			pre {
+				padding: 1em 0.5em;
+			}
+
+			table {
+				background: white;
+				border: 1px solid #666;
+				border-collapse: collapse;
+				padding: 0.5em;
+			}
+
+			table thead th,
+			table tfoot th {
+				text-align: left;
+				background-color: #eaeaea;
+				color: black;
+			}
+
+			table th,
+			table td {
+				border: 1px solid #ddd;
+				padding: 0.5em;
+			}
+
+			table td {
+				color: #222222;
+			}
+
+			.callout[data-callout='abstract'] .callout-title,
+			.callout[data-callout='summary'] .callout-title,
+			.callout[data-callout='tldr'] .callout-title,
+			.callout[data-callout='faq'] .callout-title,
+			.callout[data-callout='info'] .callout-title,
+			.callout[data-callout='help'] .callout-title {
+				background-color: #828ee7;
+			}
+			.callout[data-callout='tip'] .callout-title,
+			.callout[data-callout='hint'] .callout-title,
+			.callout[data-callout='important'] .callout-title {
+				background-color: #34bbe6;
+			}
+			.callout[data-callout='success'] .callout-title,
+			.callout[data-callout='check'] .callout-title,
+			.callout[data-callout='done'] .callout-title {
+				background-color: #a3e048;
+			}
+			.callout[data-callout='question'] .callout-title,
+			.callout[data-callout='todo'] .callout-title {
+				background-color: #49da9a;
+			}
+			.callout[data-callout='caution'] .callout-title,
+			.callout[data-callout='attention'] .callout-title {
+				background-color: #f7d038;
+			}
+			.callout[data-callout='warning'] .callout-title,
+			.callout[data-callout='missing'] .callout-title,
+			.callout[data-callout='bug'] .callout-title {
+				background-color: #eb7532;
+			}
+			.callout[data-callout='failure'] .callout-title,
+			.callout[data-callout='fail'] .callout-title,
+			.callout[data-callout='danger'] .callout-title,
+			.callout[data-callout='error'] .callout-title {
+				background-color: #e6261f;
+			}
+			.callout[data-callout='example'] .callout-title {
+				background-color: #d23be7;
+			}
+			.callout[data-callout='quote'] .callout-title,
+			.callout[data-callout='cite'] .callout-title {
+				background-color: #aaaaaa;
+			}
+
+			.callout-icon {
+				flex: 0 0 auto;
+				display: flex;
+				align-self: center;
+			}
+
+			svg.svg-icon {
+				height: 18px;
+				width: 18px;
+				stroke-width: 1.75px;
+			}
+
+			.callout {
+				overflow: hidden;
+				margin: 1em 0;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+				border-radius: 4px;
+			}
+
+			.callout-title {
+				padding: 0.5em;
+				display: flex;
+				gap: 8px;
+				font-size: inherit;
+				color: black;
+				line-height: 1.3em;
+			}
+
+			.callout-title-inner {
+				font-weight: bold;
+				color: black;
+			}
+
+			.callout-content {
+				overflow-x: auto;
+				padding: 0.25em 0.5em;
+				color: #222222;
+				background-color: white !important;
+			}
+
+			ul.contains-task-list {
+				padding-left: 0;
+				list-style: none;
+			}
+
+			ul.contains-task-list ul.contains-task-list {
+				padding-left: 2em;
+			}
+
+			ul.contains-task-list li input[type='checkbox'] {
+				margin-right: 0.5em;
+			}
+
+			.callout-table,
+			.callout-table tr,
+			.callout-table p {
+				width: 100%;
+				padding: 0;
+			}
+
+			.callout-table td {
+				width: 100%;
+				padding: 0 1em;
+			}
+
+			.callout-table p {
+				padding-bottom: 0.5em;
+			}
+
+			.source-table {
+				width: 100%;
+				background-color: #f5f5f5;
+			}
+		</style>-->
+	</head>
+	<header>
+		<!-- Navigation bar -->
+		<nav>
+			<div class="logo">
+				<img src="../assets/images/Original Logo Symbol.png" alt="Logo" />
+			</div>
+			<ul class="nav-links">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="personalProfile.html">Resume</a></li>
+				<li><a href="my-hobbies.html">Hobbies</a></li>
+				<li><a href="movies-list.html">Movies</a></li>
+			</ul>
+		</nav>
+	</header>
+	<body>
+		<div>
+			<h1 data-heading="Book List">Book List</h1>
+			<h2 data-heading="In Progress">Currently Reading</h2>
+			<hr />
+			<div class="block-language-dataview node-insert-event" style="overflow-x: auto">
+				<table class="dataview table-view-table">
+					<thead class="table-view-thead">
+						<tr class="table-view-tr-header">
+							<th class="table-view-th"><span>Cover</span><span class="dataview small-text">11</span></th>
+							<th class="table-view-th"><span>Title</span></th>
+							<th class="table-view-th"><span>Author</span></th>
+							<th class="table-view-th"><span>pages</span></th>
+							<th class="table-view-th"><span>genre</span></th>
+							<th class="table-view-th"><span>rating</span></th>
+							<th class="table-view-th"><span>Source</span></th>
+						</tr>
+					</thead>
+					<tbody class="table-view-tbody">
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=XfFvDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Atomic Habits</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>James Clear</span></li>
+								</ul>
+							</td>
+							<td>321</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=WTpwEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Building a Second Brain</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Tiago Forte</span></li>
+								</ul>
+							</td>
+							<td>272</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=md5EDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Cashvertising</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Drew Eric Whitman</span></li>
+								</ul>
+							</td>
+							<td>286</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=SY0LAwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Effective Notetaking</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Fiona McPherson</span></li>
+								</ul>
+							</td>
+							<td>281</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Juvenile Nonfiction</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=7PoYBAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Getting Things Done</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>David Allen</span></li>
+								</ul>
+							</td>
+							<td>354</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=bAiqDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Hidden Potential</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Wendy Pope</span></li>
+								</ul>
+							</td>
+							<td>155</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Religion</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=QmBjEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">How to Take Smart Notes</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Sönke Ahrens</span></li>
+								</ul>
+							</td>
+							<td>212</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Self-Help</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Book</span></li>
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=8KD2EAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Leonardo da Vinci’s Mental Models</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Peter Hollins</span></li>
+								</ul>
+							</td>
+							<td>171</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Psychology</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=LhOlDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">The Pragmatic Programmer</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>David Thomas</span></li>
+									<li class="dataview-result-list-li"><span>Andrew Hunt</span></li>
+								</ul>
+							</td>
+							<td>390</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Computers</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=CI-RDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Thinking in Bets</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Annie Duke</span></li>
+								</ul>
+							</td>
+							<td>289</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Book</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=KJuqX0ElT9wC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Writing to Learn</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>William Zinsser</span></li>
+								</ul>
+							</td>
+							<td>272</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Language Arts &amp; Disciplines</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h2 data-heading="To Read">To Read</h2>
+			<hr />
+			<div class="block-language-dataview node-insert-event" style="overflow-x: auto">
+				<table class="dataview table-view-table">
+					<thead class="table-view-thead">
+						<tr class="table-view-tr-header">
+							<th class="table-view-th"><span>Cover</span><span class="dataview small-text">17</span></th>
+							<th class="table-view-th"><span>Title</span></th>
+							<th class="table-view-th"><span>Author</span></th>
+							<th class="table-view-th"><span>pages</span></th>
+							<th class="table-view-th"><span>genre</span></th>
+							<th class="table-view-th"><span>rating</span></th>
+							<th class="table-view-th"><span>Source</span></th>
+						</tr>
+					</thead>
+					<tbody class="table-view-tbody">
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=yJTtEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Breaking Free From Broke</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>George Kamel</span></li>
+								</ul>
+							</td>
+							<td>259</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=iNfPEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Code</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Charles Petzold</span></li>
+								</ul>
+							</td>
+							<td>562</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Computers</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=es2iEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Feel-Good Productivity</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Ali Abdaal</span></li>
+								</ul>
+							</td>
+							<td>176</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Self-Help</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=cPWd08Fbem4C&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">God and the New Physics</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>P. C. W. Davies</span></li>
+								</ul>
+							</td>
+							<td>276</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Religion</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=_EQCDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">How Not to Be Wrong</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Jordan Ellenberg</span></li>
+								</ul>
+							</td>
+							<td>482</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Mathematics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=3QOZBAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">How to Read a Book</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Mortimer J. Adler</span></li>
+									<li class="dataview-result-list-li"><span>Charles Van Doren</span></li>
+								</ul>
+							</td>
+							<td>448</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Language Arts &amp; Disciplines</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=e0WJCwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">How to Write Copy That Sells</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Ray Edwards</span></li>
+								</ul>
+							</td>
+							<td>186</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=NSpMDQAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Metamagical Themas</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Douglas R. Hofstadter</span></li>
+								</ul>
+							</td>
+							<td>880</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Psychology</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=nJMFEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Mind Management Not Time Management</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>David Kadavy</span></li>
+								</ul>
+							</td>
+							<td>137</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=v-9w0AEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">On Writing Well</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>William Zinsser</span></li>
+								</ul>
+							</td>
+							<td>0</td>
+							<td><ul class="dataview dataview-ul dataview-result-list-ul"></ul></td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=4Uz1DQAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Profit First</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Mike Michalowicz</span></li>
+								</ul>
+							</td>
+							<td>225</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=IV_DEAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Slow Productivity</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Cal Newport</span></li>
+								</ul>
+							</td>
+							<td>257</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=etCIDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">The Making of a Manager</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Julie Zhuo</span></li>
+								</ul>
+							</td>
+							<td>290</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=H_-hCgAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">The Innovators</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Walter Isaacson</span></li>
+								</ul>
+							</td>
+							<td>560</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Biography &amp; Autobiography</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span><div width="50" alt="-" src="-" class="internal-embed"></div></span>
+							</td>
+							<td>
+								<span><span class="internal-link">The edge of infinity</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Paul Davies</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td><ul class="dataview dataview-ul dataview-result-list-ul"></ul></td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=hENIewAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">The Seven Habits of Highly Effective People</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Stephen R. Covey</span></li>
+								</ul>
+							</td>
+							<td>572</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Business &amp; Economics</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=VCb4XTXjVW4C&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Writing Places</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>William Zinsser</span></li>
+								</ul>
+							</td>
+							<td>208</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Biography &amp; Autobiography</span></li>
+								</ul>
+							</td>
+							<td><span>-</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>-</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--<h2 data-heading="Read">Read</h2>
+			<hr />
+			<div class="block-language-dataview node-insert-event" style="overflow-x: auto">
+				<table class="dataview table-view-table">
+					<thead class="table-view-thead">
+						<tr class="table-view-tr-header">
+							<th class="table-view-th"><span>Cover</span><span class="dataview small-text">2</span></th>
+							<th class="table-view-th"><span>Title</span></th>
+							<th class="table-view-th"><span>Author</span></th>
+							<th class="table-view-th"><span>pages</span></th>
+							<th class="table-view-th"><span>genre</span></th>
+							<th class="table-view-th"><span>rating</span></th>
+							<th class="table-view-th"><span>Source</span></th>
+						</tr>
+					</thead>
+					<tbody class="table-view-tbody">
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=k1e1pjprVUkC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Last Light</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Terri Blackstock</span></li>
+								</ul>
+							</td>
+							<td>255</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Fiction</span></li>
+								</ul>
+							</td>
+							<td><span>★★★★★</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+									<li class="dataview-result-list-li"><span>Book</span></li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span
+									><img
+										width="50"
+										alt=""
+										src="http://books.google.com/books/content?id=KbgGAAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"
+										referrerpolicy="no-referrer"
+								/></span>
+							</td>
+							<td>
+								<span><span class="internal-link">Lethal Heritage</span></span>
+							</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Michael A. Stackpole</span></li>
+								</ul>
+							</td>
+							<td>300</td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Science fiction</span></li>
+								</ul>
+							</td>
+							<td><span>★★★★★</span></td>
+							<td>
+								<ul class="dataview dataview-ul dataview-result-list-ul">
+									<li class="dataview-result-list-li"><span>Book</span></li>
+									<li class="dataview-result-list-li"><span>Kindle</span></li>
+									<li class="dataview-result-list-li"><span>Audible</span></li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>-->
+		</div>
+	</body>
+</html>

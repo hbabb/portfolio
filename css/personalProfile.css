@@ -1,0 +1,124 @@
+/**
+ * Global styles
+ *
+ * @format
+ */
+
+body {
+	font-family: 'Encode Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background: #404040; /* Updated background color */
+	color: #fff;
+}
+
+/* Header styles */
+header {
+	background: #404040; /* Match the header background to the page background */
+	padding: 20px;
+	text-align: center;
+	position: relative;
+	height: 80px; /* Set a fixed height for the header */
+}
+
+/* Centered navigation styles */
+.centered-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+/* Navigation links styles */
+.nav-links {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-links li {
+	margin: 0 20px;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 30px; /* Set link text size */
+	transition: color 0.3s;
+}
+
+.nav-links a:hover {
+	color: #0de809;
+}
+
+/* Logo styles */
+.logo {
+	text-align: center;
+	margin-top: 0px; /* Adjust margin to place logo below the header */
+}
+
+.logo img {
+	height: 250px; /* Set logo height */
+}
+
+/* Main content styles */
+main {
+	padding: 20px;
+}
+
+#intro {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#company {
+	text-align: center;
+	color: #0de809;
+}
+
+#profile-pic img {
+	border-radius: 50%;
+	margin: 20px auto;
+	display: block;
+}
+
+h2 {
+	color: #0de809;
+	border-bottom: 2px solid #0de809;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+.summary {
+	text-align: justify;
+	margin: 20px 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	background: #202020;
+}
+
+th,
+td {
+	padding: 10px;
+	border: 1px solid #404040;
+}
+
+th {
+	text-align: left;
+	color: #0de809;
+}
+
+td {
+	color: #fff;
+}
+
+.webLink {
+	text-decoration: none;
+	color: #0de809;
+}

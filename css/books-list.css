@@ -1,0 +1,106 @@
+/**
+ * Books List page styles
+ *
+ * @format
+ */
+
+body {
+	font-family: 'Encode Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background: #404040; /* Updated background color */
+	color: #fff;
+}
+
+/* Header styles */
+header {
+	position: relative;
+	/*height: 80vh; /* Reduce height to move content higher */
+	overflow: hidden;
+	background: #404040; /* Match the header background to the page background */
+}
+
+/* Navigation bar styles */
+nav {
+	display: flex;
+	justify-content: space-between; /* Space out logo and nav links */
+	align-items: center; /* Center the navigation bar vertically */
+	padding: 20px;
+}
+
+/* Logo styles */
+.logo img {
+	height: 150px; /* Set logo height */
+}
+
+/* Navigation links styles */
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin: 0 10px;
+}
+
+.nav-links a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 30px; /* Set link text size */
+	transition: color 0.3s;
+}
+
+.nav-links a:hover {
+	color: #0de809;
+}
+
+a {
+	color: #0de809;
+	text-decoration: none;
+	display: block;
+	margin: 20px;
+}
+
+h1 {
+	font-size: 3rem;
+	text-align: center;
+	color: #0de809;
+	margin-top: 0px;
+}
+h2 {
+	font-size: 2rem;
+	text-align: center;
+	color: #0de809;
+	margin-top: 150px;
+}
+
+table {
+	width: 80%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	background: #202020;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+th,
+td {
+	padding: 10px;
+	border: 1px solid #404040;
+	text-align: left;
+}
+
+th {
+	color: #0de809;
+}
+
+td img {
+	display: block;
+	margin: 0 auto;
+}
+
+hr {
+	border: 1px solid #0de809;
+	margin: 20px auto;
+	width: 80%;
+}
